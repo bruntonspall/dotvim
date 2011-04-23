@@ -50,7 +50,9 @@ match NonText /\s\s*$/
 compiler ruby
 
 autocmd FileType make     set noexpandtab
-autocmd FileType python   set noexpandtab
+autocmd FileType python   set tabstop=4
+autocmd FileType python   set shiftwidth=4
+autocmd FileType python   set smarttab
 autocmd FileType mkd      let b:surround_42 = "**\r**"
 autocmd FileType mkd      let b:surround_95 = "__\r__"
 
