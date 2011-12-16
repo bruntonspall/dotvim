@@ -7,6 +7,9 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Call Pathogen to pull in bundles
+call pathogen#infect()
+
 " ADDED BY ME
 set softtabstop=2
 set shiftwidth=2
@@ -63,23 +66,12 @@ let Tlist_Process_File_Always=1
 let Tlist_Show_Menu=1
 let Tlist_Enable_Fold_Column=0
 let g:gist_detect_filetype = 1
-let g:LustyJugglerSuppressRubyWarning = 1
-let g:speckyWindowType = 1
-let g:speckyRunSpecCmd = "spec -cbfs"
-let g:speckyRunSpecKey = "<leader>r"
-let g:speckySpecSwitcherKey = "<leader>x"
 
 set grepprg=ack
 set grepformat=%f:%l:%m
 
-map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>f :Ack<Space>
 map <leader>ws :%s/\s\+$//<CR>
-map <Leader>s <Plug>Vsurround
-map <Leader>S <Plug>Vsurround
-map <Leader>om :call PreviewMKD()<CR>
-map <Leader>cz :new<CR>:ConqueTerm zsh<CR>
-map <Leader>cx :tab new<CR>:ConqueTerm zsh<CR>
 
 function! ToggleScratch()
   if expand('%') == g:ScratchBufferName
