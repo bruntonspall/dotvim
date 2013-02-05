@@ -70,7 +70,13 @@ let g:gist_detect_filetype = 1
 set grepprg=ack
 set grepformat=%f:%l:%m
 
-map <leader>f :Ack<Space>
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+
 map <leader>ws :%s/\s\+$//<CR>
 
 function! ToggleScratch()
