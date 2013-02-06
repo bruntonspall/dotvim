@@ -6,12 +6,26 @@ endif
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+" Ensure filetype is off, but to avoid a mac bug, make sure it's on first!
+filetype on
+filetype off
 
-" Call Pathogen to pull in bundles
-call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-" Rebuild help for pathogen modules
-call pathogen#helptags()
+" Manage vundle with Vundle itself, required
+Bundle 'gmarik/vundle'
+
+" Add extra bundles
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-markdown'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'mileszs/ack.vim'
+
+
 
 " ADDED BY ME
 set softtabstop=2
@@ -64,10 +78,6 @@ autocmd FileType mkd      let b:surround_95 = "__\r__"
 
 let mapleader=","
 
-let Tlist_GainFocus_On_ToggleOpen=1
-let Tlist_Process_File_Always=1
-let Tlist_Show_Menu=1
-let Tlist_Enable_Fold_Column=0
 let g:gist_detect_filetype = 1
 
 set grepprg=ack
