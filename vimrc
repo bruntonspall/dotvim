@@ -10,6 +10,9 @@ set nocompatible
 " Call Pathogen to pull in bundles
 call pathogen#infect()
 
+" Rebuild help for pathogen modules
+call pathogen#helptags()
+
 " ADDED BY ME
 set softtabstop=2
 set shiftwidth=2
@@ -20,7 +23,7 @@ set bg=light
 " Set certain options if a gui is running
 " &term =~ "xterm-256"
 if has("gui_running")
-  set guifont=Menlo\ Regular:h14
+  set guifont=Source\ Code\ Pro:h14
   set guioptions+=TlLb
   set guioptions-=TlLb
   set lines=60
@@ -73,9 +76,6 @@ set grepformat=%f:%l:%m
 " double percentage sign in command mode is expanded
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
 map <leader>ws :%s/\s\+$//<CR>
 
