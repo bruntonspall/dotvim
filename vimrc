@@ -25,6 +25,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-foreplay'
+Bundle 'guns/vim-clojure-static'
+Bundle 'guns/screen'
+Bundle 'derekwyatt/vim-scala'
 
 
 
