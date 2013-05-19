@@ -29,7 +29,8 @@ Bundle 'tpope/vim-foreplay'
 Bundle 'guns/vim-clojure-static'
 Bundle 'guns/screen'
 Bundle 'derekwyatt/vim-scala'
-
+Bundle 'techlivezheng/vim-plugin-minibufexpl'
+Bundle 'git://git.wincent.com/command-t.git'
 
 
 " ADDED BY ME
@@ -80,6 +81,7 @@ autocmd FileType python   set shiftwidth=4
 autocmd FileType python   set smarttab
 autocmd FileType mkd      let b:surround_42 = "**\r**"
 autocmd FileType mkd      let b:surround_95 = "__\r__"
+autocmd FileType markdown set spell spelllang=en_gb
 
 let mapleader=","
 
@@ -154,7 +156,7 @@ if has("autocmd")
   autocmd BufRead *\.txt map j gj
   autocmd BufRead *\.txt map k gk
   autocmd BufRead *\.txt setlocal smartindent
-  autocmd BufRead *\.txt setlocal spell spelllang=en_us
+  autocmd BufRead *\.txt setlocal spell spelllang=en_gb
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
@@ -167,8 +169,20 @@ if has("autocmd")
 
   augroup END
 
+  " Shut down vim if the only buffer is NerdTree
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 else
 
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
+
+" Map NERDTree to Ctrl-N
+map <C-n> :NERDTreeToggle<CR>
+
+" Map Ctrl-l and Ctrl-h to switch buffers
+map <C-l> :bnext<cr>
+map <C-h> :bprev<cr>
+
+" Settings for command-t
+set wildignore+=*.o,*.obj,.git,target/**,**/target/**
