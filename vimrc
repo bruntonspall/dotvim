@@ -31,7 +31,8 @@ Bundle 'guns/screen'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
 Bundle 'git://git.wincent.com/command-t.git'
-
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
 " ADDED BY ME
 set softtabstop=2
