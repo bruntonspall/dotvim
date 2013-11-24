@@ -33,6 +33,8 @@ Bundle 'techlivezheng/vim-plugin-minibufexpl'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'jamessan/vim-gnupg'
+Bundle 'jceb/vim-orgmode'
 
 " ADDED BY ME
 set softtabstop=2
@@ -49,9 +51,9 @@ if has("gui_running")
   set guioptions-=TlLb
   set lines=60
   set columns=120
-  colorscheme ir_black
+  colorscheme fruit
 elseif &term =~ "-256color"
-	colorscheme ir_black
+	colorscheme fruit
 else
   colorscheme default
 endif
@@ -85,6 +87,7 @@ autocmd FileType mkd      let b:surround_95 = "__\r__"
 autocmd FileType markdown set spell spelllang=en_gb
 
 let mapleader=","
+let maplocalleader="\\"
 
 let g:gist_detect_filetype = 1
 
