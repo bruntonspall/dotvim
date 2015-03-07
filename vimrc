@@ -26,15 +26,16 @@ Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-foreplay'
-Bundle 'guns/vim-clojure-static'
+" Bundle 'guns/vim-clojure-static'
 Bundle 'guns/screen'
-Bundle 'derekwyatt/vim-scala'
+" Bundle 'derekwyatt/vim-scala'
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
-Bundle 'git://git.wincent.com/command-t.git'
+" Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'jamessan/vim-gnupg'
 Bundle 'jceb/vim-orgmode'
+Bundle 'nvie/vim-flake8'
 
 " ADDED BY ME
 set softtabstop=2
@@ -51,9 +52,9 @@ if has("gui_running")
   set guioptions-=TlLb
   set lines=60
   set columns=120
-  colorscheme fruit
+  colorscheme candycode
 elseif &term =~ "-256color"
-	colorscheme fruit
+	colorscheme candycode
 else
   colorscheme default
 endif
@@ -190,3 +191,4 @@ map <C-h> :bprev<cr>
 
 " Settings for command-t
 set wildignore+=*.o,*.obj,.git,target/**,**/target/**
+map <leader>s :Gstatus<cr>
