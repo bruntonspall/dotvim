@@ -10,8 +10,8 @@ set nocompatible
 filetype on
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Manage vundle with Vundle itself, required
 Bundle 'gmarik/vundle'
@@ -36,6 +36,8 @@ Bundle 'rizzatti/dash.vim'
 Bundle 'jamessan/vim-gnupg'
 Bundle 'jceb/vim-orgmode'
 Bundle 'nvie/vim-flake8'
+
+call vundle#end()
 
 " ADDED BY ME
 set softtabstop=2
@@ -192,3 +194,14 @@ map <C-h> :bprev<cr>
 " Settings for command-t
 set wildignore+=*.o,*.obj,.git,target/**,**/target/**
 map <leader>s :Gstatus<cr>
+
+" Settings for Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
